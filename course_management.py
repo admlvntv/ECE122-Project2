@@ -344,5 +344,9 @@ class CourseManager:
             list[str]: One string per course,
                        or ["No courses available."] if no courses have been added.
         """
-        # TODO: Implement this method
-        pass
+        if len(self.courses) == 0:
+            return ["No courses available."]
+        result = []
+        for course in self.courses:
+            result.append(f"{course.course_code}: {course.course_name} ({course.instructor_name})")
+        return result
