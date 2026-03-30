@@ -117,7 +117,8 @@ def main():
 
         elif choice == "10":
             # TODO: Print "Exiting program." and break out of the loop
-            pass
+            print("Exiting program.")
+            break
 
         else:
             # TODO: Print "Invalid choice. Please try again."
