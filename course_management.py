@@ -206,8 +206,10 @@ class Course:
             - Comparison must be case-insensitive.
             - Must not print anything.
         """
-        # TODO: Loop through self.items and return the matching item or None
-        pass
+        for item in self.items:
+            if item.title.lower() == item_title.lower():
+                return item
+        return None
 
     def display_items(self):
         """
