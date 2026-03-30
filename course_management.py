@@ -120,8 +120,11 @@ class Course:
             self.items           -- empty list (will hold CourseItem objects)
             self.weights         -- a copy of DEFAULT_WEIGHTS (use dict() to copy)
         """
-        # TODO: Set all instance variables described above
-        pass
+        self.course_name = course_name
+        self.course_code = course_code
+        self.instructor_name = instructor_name
+        self.items = []
+        self.weights = dict(DEFAULT_WEIGHTS)
 
     # ── Weight management ─────────────────────────────────────────────────
 
