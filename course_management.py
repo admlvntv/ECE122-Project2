@@ -234,8 +234,14 @@ class Course:
             list[str]: Strings from display_info() for items where completed is False,
                        or ["No pending items."] if all items are complete.
         """
-        # TODO: Filter items where completed == False and return their display_info() strings
-        pass
+        pending = []
+        for item in self.items:
+            if not item.completed:
+                pending.append(item.display_info())
+
+        if len(pending) == 0:
+            return ["No pending items."]
+        return pending
 
     # ── Grade calculation ─────────────────────────────────────────────────
 
