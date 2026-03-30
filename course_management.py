@@ -219,8 +219,12 @@ class Course:
             list[str]: One string per item from display_info(),
                        or ["No items found."] if the course has no items.
         """
-        # TODO: Implement this method
-        pass
+        if len(self.items) == 0:
+            return ["No items found."]
+        result = []
+        for item in self.items:
+            result.append(item.display_info())
+        return result
 
     def display_pending_items(self):
         """
