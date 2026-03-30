@@ -41,8 +41,7 @@ class CourseItem:
         Rules:
             - Must not print anything.
         """
-        # TODO: Implement this method
-        pass
+        self.points_earned = score
 
     def display_info(self):
         """
