@@ -313,8 +313,10 @@ class CourseManager:
             - Comparison must be case-insensitive.
             - Must not print anything.
         """
-        # TODO: Loop through self.courses and return the matching course or None
-        pass
+        for course in self.courses:
+            if course.course_name.lower() == course_name.lower():
+                return course
+        return None
 
     def find_course_by_code(self, course_code):
         """
