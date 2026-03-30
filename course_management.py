@@ -58,8 +58,17 @@ class CourseItem:
         Returns:
             str: The formatted item info string.
         """
-        # TODO: Build and return the formatted string described above
-        pass
+        if self.points_earned is None:
+            score_text = "Not graded"
+        else:
+            score_text = f"{self.points_earned}/{self.points_possible}"
+
+        if self.completed:
+            status = "Completed"
+        else:
+            status = "Incomplete"
+
+        return f"{self.category}: {self.title} | Due: {self.due_date} | Score: {score_text} | Status: {status}"
 
 
 # Default category weights — must sum to 100.
