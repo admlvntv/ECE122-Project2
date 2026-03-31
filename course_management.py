@@ -160,7 +160,11 @@ class Course:
             - Must not print anything.
         """
         # TODO: Check that the values sum to ~100, then update self.weights
-        pass
+        if 99.99 <= sum(new_weights.values()) <= 100.01:
+            self.weights = new_weights
+            return True
+        else:
+            return False
 
     def display_weights(self):
         """
@@ -173,7 +177,10 @@ class Course:
             list[str]: One string per category in self.weights.
         """
         # TODO: Build and return the list of weight strings
-        pass
+        list = []
+        for category, weight in self.weight.items():
+            list.append(f"{category}: {weight}%")
+        return list
 
     # ── Item management ───────────────────────────────────────────────────
 
@@ -188,7 +195,7 @@ class Course:
             - Must not print anything.
         """
         # TODO: Append item to self.items
-        pass
+        self.items.append(item)
 
     def remove_item(self, item_title):
         """
@@ -206,7 +213,6 @@ class Course:
         """
         # TODO: Loop through self.items, find the match, remove it, return True
         # If not found, return False
-        pass
 
     def find_item(self, item_title):
         """
