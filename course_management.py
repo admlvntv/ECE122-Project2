@@ -1,5 +1,5 @@
 class CourseItem:
-    def __init__(self, title, category, due_date, points_possible):
+    def __init__(self, title, category, due_date, points_possible, points_earned = None, completed = False):
         """
         Initialize a CourseItem with the given attributes.
 
@@ -18,7 +18,12 @@ class CourseItem:
             self.completed      -- starts as False
         """
         # TODO: Set all instance variables described above
-        pass
+        self.title = title
+        self.category = category
+        self.due_date = due_date
+        self.points_possible = points_possible
+        self.points_earned = points_earned
+        self.completed = completed
 
     def mark_complete(self):
         """
@@ -29,7 +34,7 @@ class CourseItem:
             - Must not print anything.
         """
         # TODO: Implement this method
-        pass
+        self.completed = True
 
     def update_score(self, score):
         """
@@ -100,8 +105,19 @@ def score_to_letter(percentage):
         str: The corresponding letter grade string (e.g., "A", "B+", "C-").
     """
     # TODO: Implement the letter grade scale above using if/elif/else
-    pass
 
+    if percentage >= 93: return "A"
+    elif percentage >= 90: return "A-"
+    elif percentage >= 87: return "B+"
+    elif percentage >= 83: return "B"
+    elif percentage >= 80: return "B-"
+    elif percentage >= 77: return "C+"
+    elif percentage >= 73: return "C"
+    elif percentage >= 70: return "C-"
+    elif percentage >= 67: return "D+"
+    elif percentage >= 63: return "D"
+    elif percentage >= 60: return "D-"
+    else: return "F"
 
 class Course:
     def __init__(self, course_name, course_code, instructor_name):
