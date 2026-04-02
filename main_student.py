@@ -42,7 +42,7 @@ def main():
 
     while True:
         display_menu()
-        choice = input("Enter your choice: ").strip()
+        choice = input("Enter your choice: ")
 
         if choice == "1":
             # Create a Course object and add it to manager via manager.add_course()
