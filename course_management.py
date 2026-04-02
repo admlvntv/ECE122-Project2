@@ -213,6 +213,11 @@ class Course:
         """
         # TODO: Loop through self.items, find the match, remove it, return True
         # If not found, return False
+        for item in self.items:
+            if item.title.lower() == self.item_title.lower():
+                self.items.remove(item)
+                return True
+        return False
 
     def find_item(self, item_title):
         """
@@ -306,7 +311,7 @@ class CourseManager:
             self.courses -- empty list (will hold Course objects)
         """
         # TODO: Set self.courses to an empty list
-        pass
+        self.courses=[]
 
     def add_course(self, course):
         """
@@ -319,7 +324,7 @@ class CourseManager:
             - Must not print anything.
         """
         # TODO: Append course to self.courses
-        pass
+        self.courses.append(course)
 
     def find_course(self, course_name):
         """
