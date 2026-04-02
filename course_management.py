@@ -291,7 +291,29 @@ class Course:
             - Use score_to_letter() to convert the final percentage to a letter grade.
             - Must not print anything.
         """
-        pass
+        weighted_sum = 0
+        active_weight = 0
+        for category, weight in self.weights.items():
+            if weight == 0:
+                continue
+            graded = []
+            for item in self.items:
+                if item.category == category and item.points_earned is not None:
+                    graded.append(item)
+            if not graded:
+                continue
+            total_earned = 0
+            total_possible = 0
+            for item in graded:
+                total_earned += item.points_earned
+                total_possible += item.points_possible
+            category_pct = total_earned / total_possible * 100
+            weighted_sum += category_pct * weight
+            active_weight += weight
+        if active_weight == 0:
+            return None
+        percentage = round(weighted_sum / active_weight, 2)
+        return percentage, score_to_letter(percentage)
 
 
 class CourseManager:
