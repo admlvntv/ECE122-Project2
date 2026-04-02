@@ -42,7 +42,7 @@ def main():
 
     while True:
         display_menu()
-        choice = input("Enter your choice: ").strip()
+        choice = input("Enter your choice: ")
 
         if choice == "1":
             # TODO: Prompt for course name, course code, and instructor name
