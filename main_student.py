@@ -45,14 +45,17 @@ def main():
         choice = input("Enter your choice: ").strip()
 
         if choice == "1":
-            # TODO: Prompt for course name, course code, and instructor name
             # Create a Course object and add it to manager via manager.add_course()
             # Print "Course added successfully."
-            pass
+            name = input("Enter course name: ").strip()
+            code = input("Enter course code: ").strip()
+            instructor = input("Enter instructor name: ").strip()
+            manager.add_course(Course(name, code, instructor))
+            print("Course added successfully.")
 
         elif choice == "2":
-            # TODO: Print each string returned by manager.display_courses()
-            pass
+            for course in manager.display_courses():
+                print(course)
 
         elif choice == "3":
             # TODO: Call prompt_course_code(manager) to get the course

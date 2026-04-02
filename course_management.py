@@ -17,7 +17,6 @@ class CourseItem:
             self.points_earned  -- starts as None (not yet graded)
             self.completed      -- starts as False
         """
-        # TODO: Set all instance variables described above
         self.title = title
         self.category = category
         self.due_date = due_date
@@ -33,7 +32,6 @@ class CourseItem:
             - Sets self.completed to True.
             - Must not print anything.
         """
-        # TODO: Implement this method
         self.completed = True
 
     def update_score(self, score):
@@ -104,7 +102,6 @@ def score_to_letter(percentage):
     Returns:
         str: The corresponding letter grade string (e.g., "A", "B+", "C-").
     """
-    # TODO: Implement the letter grade scale above using if/elif/else
 
     if percentage >= 93: return "A"
     elif percentage >= 90: return "A-"
@@ -159,7 +156,6 @@ class Course:
         Rules:
             - Must not print anything.
         """
-        # TODO: Check that the values sum to ~100, then update self.weights
         if 99.99 <= sum(new_weights.values()) <= 100.01:
             self.weights = new_weights
             return True
@@ -176,9 +172,8 @@ class Course:
         Returns:
             list[str]: One string per category in self.weights.
         """
-        # TODO: Build and return the list of weight strings
         list = []
-        for category, weight in self.weight.items():
+        for category, weight in self.weights.items():
             list.append(f"{category}: {weight}%")
         return list
 
@@ -194,7 +189,6 @@ class Course:
         Rules:
             - Must not print anything.
         """
-        # TODO: Append item to self.items
         self.items.append(item)
 
     def remove_item(self, item_title):
@@ -211,10 +205,9 @@ class Course:
             - Comparison must be case-insensitive.
             - Must not print anything.
         """
-        # TODO: Loop through self.items, find the match, remove it, return True
         # If not found, return False
         for item in self.items:
-            if item.title.lower() == self.item_title.lower():
+            if item.title.lower() == item_title.lower():
                 self.items.remove(item)
                 return True
         return False
@@ -298,7 +291,6 @@ class Course:
             - Use score_to_letter() to convert the final percentage to a letter grade.
             - Must not print anything.
         """
-        # TODO: Implement the weighted grade algorithm described above
         pass
 
 
@@ -310,7 +302,6 @@ class CourseManager:
         Instance variables to set:
             self.courses -- empty list (will hold Course objects)
         """
-        # TODO: Set self.courses to an empty list
         self.courses=[]
 
     def add_course(self, course):
@@ -323,7 +314,6 @@ class CourseManager:
         Rules:
             - Must not print anything.
         """
-        # TODO: Append course to self.courses
         self.courses.append(course)
 
     def find_course(self, course_name):
