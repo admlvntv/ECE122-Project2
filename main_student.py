@@ -186,7 +186,7 @@ def main():
 
         else:
             # TODO: Print "Invalid choice. Please try again."
-            pass
+            print("Invalid choice. Please try again.")
 
 
 if __name__ == "__main__":
