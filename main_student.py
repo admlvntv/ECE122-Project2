@@ -130,7 +130,11 @@ def main():
             # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Print each string returned by course.display_pending_items()
-            pass
+            course = prompt_course_code(manager)
+            if course is None:
+                continue
+            for item in course.display_pending_items():
+                print(item)
 
         elif choice == "8":
             # TODO: Call prompt_course_code(manager) to get the course
