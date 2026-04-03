@@ -115,7 +115,16 @@ def main():
             # If None, print "Item not found."
             # Otherwise, prompt for score (float), call item.update_score()
             # Print "Score updated successfully."
-            pass
+            course = prompt_course_code(manager)
+            if course is None:
+                continue
+            item = course.find_item(input("Enter item title: "))
+            if item is None:
+                print("Item not found.")
+            else:
+                score = float(input("Enter score: "))
+                item.update_score(score)
+                print("Score updated successfully.")
 
         elif choice == "7":
             # TODO: Call prompt_course_code(manager) to get the course
