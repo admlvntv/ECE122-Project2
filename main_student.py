@@ -1,3 +1,9 @@
+# Student 1: Agilan Kumar
+# Spire Id: 35073172
+#
+# Student 2: Adam Nativ
+# Spire Id: 35141601
+
 from course_management import CourseItem, Course, CourseManager, DEFAULT_WEIGHTS
 
 

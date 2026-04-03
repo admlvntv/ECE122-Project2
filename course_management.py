@@ -1,3 +1,9 @@
+# Student 1: Agilan Kumar
+# Spire Id: 35073172
+#
+# Student 2: Adam Nativ
+# Spire Id: 35141601
+
 class CourseItem:
     def __init__(self, title, category, due_date, points_possible, points_earned = None, completed = False):
         """
