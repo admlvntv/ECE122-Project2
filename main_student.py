@@ -146,7 +146,36 @@ def main():
             #   Print "  Weighted average : <percentage:.2f>%"
             #   Print "  Letter grade     : <letter>"
             #   Print a per-category breakdown (see project spec for format)
-            pass
+            course = prompt_course_code(manager)
+            if course is None:
+                continue
+            grade_info = course.calculate_grade()
+            if grade_info is None:
+                print("No graded items yet.")
+            else:
+                percentage, letter = grade_info
+                print(f"\nCourse Grade for {course.course_code}: {course.course_name}")
+                print(f"  Weighted average : {percentage:.2f}%")
+                print(f"  Letter grade     : {letter}")
+
+                print("\nCategory breakdown:")
+                for category, weight in course.weights.items():
+                    graded = []
+                    for item in course.items:
+                        if item.category == category and item.points_earned is not None:
+                            graded.append(item)
+                    if not graded:
+                        print(f"  {category} ({weight}%): No graded items")
+                    else:
+                        total_earned = 0
+                        total_possible = 0
+                        for item in graded:
+                            total_earned += item.points_earned
+                            total_possible += item.points_possible
+
+                        category_pct = (total_earned / total_possible) * 100
+
+                        print(f"  {category} ({weight}%): {total_earned}/{total_possible} = {category_pct:.1f}%")
 
         elif choice == "9":
             # TODO: Call prompt_course_code(manager) to get the course
