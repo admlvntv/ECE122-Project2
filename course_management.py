@@ -84,10 +84,10 @@ class CourseItem:
 # Each Course gets its own copy of these weights, which can be customized.
 DEFAULT_WEIGHTS = {
     "Homework":     20.0,
-    "Quiz":         10.0,
-    "Exam":         30.0,
+    "Quiz":         20.0,
+    "Exam":         40.0,
     "Lecture Note": 5.0,
-    "Project":      35.0,
+    "Project":      15.0,
 }
 
 
