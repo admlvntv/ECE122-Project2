@@ -79,7 +79,11 @@ def main():
             course = prompt_course_code(manager)
             if course is None:
                 continue
-            course.add_item(CourseItem(input("Enter course title: "), input("Enter category: "), input("Enter due date: "), float(input("Enter points possible: "))))
+            title = input("Enter course title: ")
+            category = input("Enter category: ")
+            due_date = input("Enter due date: ")
+            points_possible = float(input("Enter points possible: "))
+            course.add_item(CourseItem(title, category, due_date, points_possible))
             print("Item added successfully.")
 
         elif choice == "4":
