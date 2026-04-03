@@ -158,7 +158,26 @@ def main():
             # Validate that the new weights sum to ~100
             # If valid, call course.set_weights() and print "Weights updated successfully."
             # If invalid, print "Weights must sum to 100 (got <total:.2f>). No changes made."
-            pass
+            course = prompt_course_code(manager)
+            if course is None:
+                continue
+            print(f"Current weights for {course.course_code}:")
+            for weight_line in course.display_weights():
+                print(weight_line)
+            print("Enter new weights for each category (must sum to 100). Press Enter to keep current value.")
+            new_weights = {}
+            for category in course.weights:
+                user_input = input(f"  {category} (currently {course.weights[category]}%): ")
+                if user_input:
+                    new_weights[category] = float(user_input)
+                else:
+                    new_weights[category] = course.weights[category]
+            total = sum(new_weights.values())
+            if abs(total - 100.0) < 0.01:
+                course.set_weights(new_weights)
+                print("Weights updated successfully.")
+            else:
+                print(f"Weights must sum to 100 (got {total:.2f}). No changes made.")
 
         elif choice == "10":
             # TODO: Print "Exiting program." and break out of the loop
