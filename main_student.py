@@ -39,8 +39,15 @@ def prompt_course_code(manager):
     Returns:
         Course or None.
     """
-    # TODO: Implement this helper following the steps above
-    pass
+    print("Current courses:")
+    for course in manager.display_courses():
+        print("  " + course)
+    code = input("Enter course code: ")
+    course = manager.find_course_by_code(code)
+    if course is None:
+        print("Course not found.")
+        return None
+    return course
 
 
 def main():
