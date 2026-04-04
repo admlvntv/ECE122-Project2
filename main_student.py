@@ -71,7 +71,6 @@ def main():
                 print(course)
 
         elif choice == "3":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue' to go back to the menu
             # Otherwise, prompt for item title, category, due date, and points possible
             # Create a CourseItem and add it to the course via course.add_item()
@@ -79,15 +78,14 @@ def main():
             course = prompt_course_code(manager)
             if course is None:
                 continue
-            title = input("Enter course title: ")
-            category = input("Enter category: ")
-            due_date = input("Enter due date: ")
+            title = input("Enter item title: ")
+            category = input("Enter item category: ")
+            due_date = input("Enter item due date: ")
             points_possible = float(input("Enter points possible: "))
             course.add_item(CourseItem(title, category, due_date, points_possible))
             print("Item added successfully.")
 
         elif choice == "4":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Otherwise, print each string returned by course.display_items()
             course = prompt_course_code(manager)
@@ -97,7 +95,6 @@ def main():
                 print(i)
 
         elif choice == "5":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Prompt for item title, call course.find_item()
             # If None, print "Item not found."
@@ -113,7 +110,6 @@ def main():
                 print("Item marked as completed.")
 
         elif choice == "6":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Prompt for item title, call course.find_item()
             # If None, print "Item not found."
@@ -131,7 +127,6 @@ def main():
                 print("Score updated successfully.")
 
         elif choice == "7":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Print each string returned by course.display_pending_items()
             course = prompt_course_code(manager)
@@ -141,7 +136,6 @@ def main():
                 print(item)
 
         elif choice == "8":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Call course.calculate_grade()
             # If None, print "No graded items yet."
@@ -182,7 +176,6 @@ def main():
                         print(f"  {category} ({weight}%): {total_earned}/{total_possible} = {category_pct:.1f}%")
 
         elif choice == "9":
-            # TODO: Call prompt_course_code(manager) to get the course
             # If None, use 'continue'
             # Print "Current weights for <course_code>:"
             # Print each string from course.display_weights()
@@ -213,12 +206,10 @@ def main():
                 print(f"Weights must sum to 100 (got {total:.2f}). No changes made.")
 
         elif choice == "10":
-            # TODO: Print "Exiting program." and break out of the loop
             print("Exiting program.")
             break
 
         else:
-            # TODO: Print "Invalid choice. Please try again."
             print("Invalid choice. Please try again.")
 
 
